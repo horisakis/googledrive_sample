@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  provider: MyString
+  uid: MyString
+  nickname: MyString
+  image_url: 
+  go_token: 
+  go_token_secret: MyString
+
+two:
+  provider: MyString
+  uid: MyString
+  nickname: MyString
+  image_url: 
+  go_token: 
+  go_token_secret: MyString
