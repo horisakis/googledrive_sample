@@ -19,7 +19,17 @@ class SessionsController < ApplicationController
       current_user.go_token
     )
 
-    token.get('https://accounts.google.com/o/oauth2/revoke', params: { token: token.token })
+    begin
+      token.get('https://accounts.google.com/o/oauth2/revoke', params: { token: token.token })
+
+    rescue OAuth2::Error => e
+      binding.pry
+      if e.message.include?('invalid_token')
+        p e.message
+      else
+        raise
+      end
+    end
 
     reset_session
     redirect_to root_path
