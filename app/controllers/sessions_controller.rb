@@ -23,7 +23,6 @@ class SessionsController < ApplicationController
       token.get('https://accounts.google.com/o/oauth2/revoke', params: { token: token.token })
 
     rescue OAuth2::Error => e
-      binding.pry
       if e.message.include?('invalid_token')
         p e.message
       else
